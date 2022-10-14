@@ -1,12 +1,40 @@
 import Vue from 'vue'
-import Route from 'vue-router'
-Vue.use(Route)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+let originPush = VueRouter.prototype.push
+let originReplace = VueRouter.prototype.replace
+
+VueRouter.prototype.push = function (location, resolve, reject) {
+  if (resolve && reject) {
+    originPush.call(this, location, resolve, reject)
+  } else {
+    originPush.call(
+      this,
+      location,
+      () => {},
+      () => {}
+    )
+  }
+}
+VueRouter.prototype.replace = function (location, resolve, reject) {
+  if (resolve && reject) {
+    originReplace.call(this, location, resolve, reject)
+  } else {
+    originReplace.call(
+      this,
+      location,
+      () => {},
+      () => {}
+    )
+  }
+}
 
 const routes = [
   {
     path: '/line',
     component: () => import('@/views/line'),
-    meta:{title:'折线图'}
+    meta: { title: '折线图' },
   },
   {
     path: '/histogram',
@@ -30,7 +58,7 @@ const routes = [
   },
 ]
 
-const route = new Route({
+const route = new VueRouter({
   mode: 'history',
   routes,
 })
