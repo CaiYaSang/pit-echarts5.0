@@ -6,6 +6,7 @@ const routes = [
   {
     path: '/line',
     component: () => import('@/views/line'),
+    meta:{title:'折线图'}
   },
   {
     path: '/histogram',

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="homepage">
-        <!-- 左侧导航 -->
+      <!-- 左侧导航 -->
       <div class="left">
         <el-aside>
           <el-menu :default-openeds="['1', '1']">
@@ -24,16 +24,15 @@
           </el-menu>
         </el-aside>
       </div>
-        <!-- 面包屑 -->
+      <!-- 面包屑 -->
       <div class="top">
         <el-header>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item to='/'>图表</el-breadcrumb-item>
-            <el-breadcrumb-item :to='{ path : pie}'>折线图</el-breadcrumb-item>
+          <el-breadcrumb separator="">
+            <el-breadcrumb-item to="/home">图表</el-breadcrumb-item>
           </el-breadcrumb>
         </el-header>
       </div>
-        <!-- 可视区 -->
+      <!-- 可视区 -->
       <div class="view">
         <div>
           <router-view></router-view>
@@ -45,26 +44,31 @@
 <script>
 export default {
   name: 'Aasenem-',
-  methods:{
-    line(){
+  data() {
+    return {
+      title: '',
+    }
+  },
+  methods: {
+    line() {
       this.$router.push('/line')
     },
-    histogram(){
+    histogram() {
       this.$router.push('/histogram')
     },
-    pie(){
+    pie() {
       this.$router.push('/pie')
     },
-    boxplot(){
+    boxplot() {
       this.$router.push('/boxplot')
     },
-    plat(){
+    plat() {
       this.$router.push('/plat')
     },
-    funnel(){
+    funnel() {
       this.$router.push('/funnel')
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped lang="less">
