@@ -34,11 +34,10 @@ const routes = [
   {
     path: '/line',
     component: () => import('@/views/line'),
-    meta: { title: '折线图' },
   },
   {
-    path: '/histogram',
-    component: () => import('@/views/histogram'),
+    path: '/Columnar',
+    component: () => import('@/views/Columnar'),
   },
   {
     path: '/plat',

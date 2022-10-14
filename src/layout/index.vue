@@ -14,7 +14,7 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item index="1-1" @click="line">折线图</el-menu-item>
-                <el-menu-item index="1-2" @click="histogram">柱状图</el-menu-item>
+                <el-menu-item index="1-2" @click="Columnar">柱状图</el-menu-item>
                 <el-menu-item index="1-3" @click="pie">饼图</el-menu-item>
                 <el-menu-item index="1-4" @click="boxplot">盒须图</el-menu-item>
                 <el-menu-item index="1-5" @click="plat">地图</el-menu-item>
@@ -53,8 +53,8 @@ export default {
     line() {
       this.$router.push('/line')
     },
-    histogram() {
-      this.$router.push('/histogram')
+    Columnar() {
+      this.$router.push('/Columnar')
     },
     pie() {
       this.$router.push('/pie')
