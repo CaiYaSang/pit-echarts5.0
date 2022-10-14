@@ -28,7 +28,7 @@
       <div class="top">
         <el-header>
           <el-breadcrumb separator="">
-            <el-breadcrumb-item to="/home">图表</el-breadcrumb-item>
+            <el-breadcrumb-item to="/line">图表</el-breadcrumb-item>
           </el-breadcrumb>
         </el-header>
       </div>
@@ -111,7 +111,7 @@ export default {
     top: 5%;
     width: 90%;
     height: 95%;
-    background-color: rgb(231, 231, 231);
+    background-color: #ffffff;
     div {
       height: 100%;
       display: flex;
