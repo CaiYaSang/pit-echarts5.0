@@ -13,12 +13,12 @@
                 </router-link>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1">折线图</el-menu-item>
-                <el-menu-item index="1-2">柱状图</el-menu-item>
-                <el-menu-item index="1-3">饼图</el-menu-item>
-                <el-menu-item index="1-4">盒须图</el-menu-item>
-                <el-menu-item index="1-5">地图</el-menu-item>
-                <el-menu-item index="1-6">漏斗图</el-menu-item>
+                <el-menu-item index="1-1" @click="line">折线图</el-menu-item>
+                <el-menu-item index="1-2" @click="histogram">柱状图</el-menu-item>
+                <el-menu-item index="1-3" @click="pie">饼图</el-menu-item>
+                <el-menu-item index="1-4" @click="boxplot">盒须图</el-menu-item>
+                <el-menu-item index="1-5" @click="plat">地图</el-menu-item>
+                <el-menu-item index="1-6" @click="funnel">漏斗图</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
           </el-menu>
@@ -28,17 +28,14 @@
       <div class="top">
         <el-header>
           <el-breadcrumb separator="/">
-            <el-breadcrumb-item to='/home'>首页</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-            <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-            <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+            <el-breadcrumb-item to='/'>图表</el-breadcrumb-item>
+            <el-breadcrumb-item :to='{ path : pie}'>折线图</el-breadcrumb-item>
           </el-breadcrumb>
         </el-header>
       </div>
         <!-- 可视区 -->
       <div class="view">
         <div>
-          <h1>hello</h1>
           <router-view></router-view>
         </div>
       </div>
@@ -48,6 +45,26 @@
 <script>
 export default {
   name: 'Aasenem-',
+  methods:{
+    line(){
+      this.$router.push('/line')
+    },
+    histogram(){
+      this.$router.push('/histogram')
+    },
+    pie(){
+      this.$router.push('/pie')
+    },
+    boxplot(){
+      this.$router.push('/boxplot')
+    },
+    plat(){
+      this.$router.push('/plat')
+    },
+    funnel(){
+      this.$router.push('/funnel')
+    }
+  }
 }
 </script>
 <style scoped lang="less">
