@@ -7,16 +7,16 @@
 export default {
   name: 'Columnar-',
   mounted() {
-    let lineCharts = this.$echarts.init(this.$refs.bar)
-    lineCharts.setOption({
+    let barCharts = this.$echarts.init(this.$refs.bar)
+    barCharts.setOption({
       xAxis: {
-        type: 'value', //x轴坐标轴类型
-        // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], //坐标轴数据
+        type: 'category', //x轴坐标轴类型
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], //坐标轴数据
       },
       yAxis: [
         {
-          //  type: 'value', //y轴坐标轴类型 
-          type: 'category', //y轴坐标轴类型 
+           type: 'value', //y轴坐标轴类型 
+          // type: 'category', //y轴坐标轴类型 
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] //坐标轴数据
         },
       ],
@@ -36,7 +36,8 @@ export default {
           type: "line", //图表类型
         },
       ],
-    })
+    },
+    )
   },
 }
 </script>
